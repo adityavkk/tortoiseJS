@@ -48,7 +48,7 @@ class Tortoise {
   }
 
   update() {
-    this.emitter.trigger('turtle.change', this);
+    this.emitter.trigger('tortoise.change', this);
   }
 
   penColor(color) {

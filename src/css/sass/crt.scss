@@ -210,6 +210,6 @@ body{
   pointer-events:none;
 }
 #switch:checked~.container .overlay{
-  animation:overlay-anim 20s linear;
+  animation:overlay-anim 30s linear;
   animation-fill-mode:forwards;
 }

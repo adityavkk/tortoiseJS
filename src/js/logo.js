@@ -212,19 +212,37 @@ commands.MAKE = {
 };
 commands.SUM = {
   'args': [NumberToken, NumberToken],
-  'f': function(left, right) {
-    return left + right;
+  'f': function(a, b) {
+    return a + b;
   }
 };
 commands.DIFFERENCE = {
   'args': [NumberToken, NumberToken],
-  'f': function(left, right) {
-    return left - right;
+  'f': function(a, b) {
+    return a - b;
   }
 };
 commands.MINUS = {
   'args': [NumberToken],
   'f': function(value) {
     return -value;
+  }
+};
+commands.QUOTIENT = {
+  'args': [NumberToken, NumberToken],
+  'f': function(a, b) {
+    return a / b;
+  }
+};
+commands.PRODUCT = {
+  'args': [NumberToken, NumberToken],
+  'f': function(a, b) {
+    return a * b;
+  }
+};
+commands.REMAINDER = {
+  'args': [NumberToken, NumberToken],
+  'f': function(a, b) {
+    return a % b;
   }
 };

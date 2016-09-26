@@ -1,5 +1,13 @@
 #Tortoise JS
 A small LOGO interpreter written in JS.
+##Logo
+Logo is a dialect of LISP developed in 1967. It was designed to be an
+educational language with a low barrier of entry but an extremely high
+ceiling. 
+
+It's most-known feature is the turtle, an on-screen "cursor" that shows output from commands for movement and small retractable pen, together producing line graphics.
+<!-- ![About_Logo](http://i.imgur.com/5hF3eXg.gif) -->
+<!-- ![TortoiseJS](http://i.imgur.com/Mh8LzDi.png) -->
 ##Usage
 Available commands:
 ```
@@ -20,9 +28,24 @@ REPEAT number [code_block]
 
 MAKE "variable_name
 :call_made_variable
+
+SUM a b
+DIFFERENCE a b
+PRODUCT a b
+QUOTIENT a b
+REMAINDER a b
+MINUS a
 ```
 
-##Some Example Shapes
+##Some Example Sketches
+###Star
+```
+TO star
+  repeat 5 [ fd 100 rt 144 ]
+END
+clearscreen
+star
+```
 ###Square Spiral
 ```
 make "squarespiral 7
@@ -131,3 +154,35 @@ repeat 8 [
     lt 45
 ]
 ```
+###Hexagonal Grid
+```
+; number of layers
+Make "layers 6
+Make "count 0
+CS
+Repeat :layers [
+  Make "segs :count
+  SetPenColour SUM :count 1
+  Repeat 6 [
+    Repeat :segs [
+      Repeat 2 [ Forward 20 Right 60 ]
+      Forward 20
+      PenUp Back 20 PenDown
+      Left 120
+    ]
+    Forward 20 Right 60
+  ]
+  ; Move out to the next layer
+  PenUp Left 120 Repeat 2 [ Forward 20 Right 60 ] PenDown
+  Make "count SUM :count 1
+]
+```
+##To Do
+- Write specs
+- Add lexical scoping and parameters to functions
+- Better error handling and reporting
+- Reduce CPU load by optimizing svg path drawing and css 
+- Add feature to watch sketches being drawn
+- Impliment conditionals and for loops
+##Reference
+Specs based on the [Berkley LOGO] (https://people.eecs.berkeley.edu/~bh/logo.html)

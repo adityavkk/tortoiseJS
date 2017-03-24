@@ -54,9 +54,9 @@ class Logo {
   }
 
   tokenizeInput(input) {
-    const lines = input.split(/\n/g),
-      tokens = [],
-      words, i, j, ll, wl;
+    const lines = input.split(/\n/g);
+    const tokens = [];
+    let words, i, j, ll, wl;
 
     for (i = 0, ll = lines.length; i < ll; i++) {
       words = lines[i]
@@ -118,7 +118,7 @@ class Logo {
 commands.REPEAT = {
   'args': [NumberToken, ListToken],
   'f': function(count, list) {
-    const copy, i, token, result;
+    let copy, i, token, result;
     for (i = 0; i < count; i++) {
       // Need to reuse the same tokens each time through the loop.
       copy = list.slice(0);

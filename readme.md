@@ -185,7 +185,7 @@ Repeat :layers [
 - Better error handling and reporting
 - Reduce CPU load by optimizing svg path drawing and css 
 - Add feature to watch sketches being drawn
-- Impliment conditionals and for loops
+- Implement conditionals and for loops
 
 ## Reference
 Specs based on the [Berkley LOGO] (https://people.eecs.berkeley.edu/~bh/logo.html)
